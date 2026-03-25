@@ -4,6 +4,10 @@ As is, the anemometer draws too much current for battery operation. The optoelec
 
 Every 2 minutes, the anemometer broadcasts the mean wind speed and maximum 3 second gust of the previous 10 minutes. The code is written in the Arduino framework, itself based on FreeRTOS - semaphores are used to sleep and wake the MCU, giving rapid response.
 
+This model has a calibration factor of 1.75 m/s x rotational frequency. With 2 pulses per rotation, 3 second gusts are measured in increments of 0.29 m/s or 1.05 km/h.
+
+The LoRa radio is configured for miniumum on-air time to reduce power consumption - this still affords > 200 m range.
+
 ![anem1](https://github.com/user-attachments/assets/9ae9a2b2-2650-4923-806c-26bd9a84a536)
 
 The optoelectronic sensor and board are removed.
